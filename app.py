@@ -13,13 +13,13 @@ color1='#04F9E6'
 color2='#1B03B1'
 sourceurl = 'https://www.kaggle.com/christophercorrea/dc-residential-properties/'
 githublink = 'https://github.com/austinlasseter/dash-scatterplot-housing'
+image_name = 'dc-flag.jpg'
 
 ########### Prepare the dataframe
 df = pd.read_csv('DC_Properties.csv')
 df=df[df['ASSESSMENT_NBHD']==neighborhood]
-df=df[(df['PRICE']<=1000000) & (df['PRICE']>=10000)]
 df=df[df['LANDAREA']<4000]
-df=df[df['PRICE']<900000]
+df=df[df['PRICE']<900000 & (df['PRICE']>=10000)]
 df=df[df['BEDRM']<8]
 
 ########### Set up the chart
